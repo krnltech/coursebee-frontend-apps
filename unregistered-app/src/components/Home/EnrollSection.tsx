@@ -18,7 +18,7 @@ export default function EnrollSection() {
                                 data-delay="0.5"
                                 className="pt-6 pb-8 max-w-[494px]"
                             >
-                                Start today and unlock endless possibilities. Don't wait to take
+                                Start today and unlock endless possibilities. Don&apos;t wait to take
                                 the first step towards your goals. Embrace a brighter future
                                 now.
                             </p>

@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 function NotFound() {
   return (
     <section className="bg-404 mt-20 grid place-content-center min-h-screen h-full">
@@ -8,7 +10,7 @@ function NotFound() {
                 page you’re looking for.</p>
             <div className="flex flex-col md:flex-row justify-center items-stretch gap-6 pt-16">
                 <button className="px-12 py-6 text-lg font-bold btn">Explore Courses</button>
-                <a type="button" className="px-12 py-6 text-lg btn-white" href="/"> Back to Home </a>
+                <Link type="button" className="px-12 py-6 text-lg btn-white" href="/"> Back to Home </Link>
             </div>
         </div>
     </section>

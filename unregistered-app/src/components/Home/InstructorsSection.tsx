@@ -19,7 +19,7 @@ function InstructorsSection() {
             Meet our exceptional instructors dedicated to your learning success.
             With industry expertise and a passion for teaching, they guide and
             inspire you throughout your journey. Unlock your full potential with
-            CourseBee's expert instructors who simplify complex concepts.
+            CourseBee&apos;s expert instructors who simplify complex concepts.
           </p>
           <p
             className="pt-[38px] text-dark-gray font-normal"

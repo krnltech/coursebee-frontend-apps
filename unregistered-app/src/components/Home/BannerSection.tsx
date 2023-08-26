@@ -39,7 +39,7 @@ function BannerSection() {
               className="mt-2 text-2xl md:text-4xl font-semibold"
             >
               AI-Powered Future Ahead, Enroll in
-              <span className="font-light">CourseBee's </span> New AI Course
+              <span className="font-light">CourseBee&apos;s </span> New AI Course
               Today!
             </p>
 
