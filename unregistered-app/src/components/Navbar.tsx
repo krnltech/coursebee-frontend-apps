@@ -3,6 +3,8 @@ import MobileNav from "./MobileNav";
 import useScrollDirection from "@/libs/hooks/scrollDirection";
 import { useTranslation } from "next-i18next";
 import { useRouter } from "next/router";
+import Image from "next/image";
+import { openContact } from "./Contact";
 
 
 function Navbar() {
@@ -16,7 +18,7 @@ function Navbar() {
                 className="flex flex-row max-w mx-auto px-2 items-center py-5 justify-between relative"
             >
                 <Link href="/">
-                    <img src="/images/coursebeeLogo.svg" alt="coursebee-logo" className="w-24 -mt-2"
+                    <Image width={96} height={26} src="/images/coursebeeLogo.svg" alt="coursebee-logo" className="w-24 -mt-2"
                     />
                 </Link>
                 {/* <!-- Desktop Nav --> */}
@@ -24,8 +26,8 @@ function Navbar() {
                     <li> <Link className={`nav-link ${asPath =="/" ? "nav-active" : ""}`} href="/"> {t("Home")} </Link> </li>
                     <li> <Link className={`nav-link ${asPath =="/courses" ? "nav-active" : ""}`} href="/courses"> {t("Courses")} </Link> </li>
                     <li> <Link className={`nav-link ${asPath =="/about" ? "nav-active" : ""}`} href="/about"> {t("About")} </Link> </li>
-                    <li> <Link className={`nav-link ${asPath =="/career" ? "nav-active" : ""}`} href="/career"> {t("Career")} </Link> </li>
-                    <li> <a type="button" className="nav-link cursor-pointer">{t("Contact")}</a> </li>
+                    <li> <Link className={`nav-link ${asPath =="/for-business" ? "nav-active" : ""}`} href="/coming-soon"> {t("For Business")} </Link> </li>
+                    <li> <a type="button" onClick={openContact} className="nav-link cursor-pointer">{t("Contact")}</a> </li>
                 </ul>
 
                 <div className="flex flex-row items-center gap-2">
@@ -35,7 +37,7 @@ function Navbar() {
                     </ul>
                     <button className="hidden sm:btn sm:shadow sm:py-3 ">{t("Login")}</button>
                     <Link href={asPath} locale={locale === 'en' ? "bn" : "en"} className="flex rounded-md border-[1px] border-light-gray px-6 md:px-8 py-1.5  text-sm font-medium transition items-center gap-1 hover:bg-slate-100">
-                        <img src="/icons/language.svg" alt="language" />
+                        <Image width={18} height={30} src="/icons/language.svg" alt="language" />
                         <p>{locale === 'en' ? "EN" : "BN"}</p>
                     </Link>
                     <MobileNav />

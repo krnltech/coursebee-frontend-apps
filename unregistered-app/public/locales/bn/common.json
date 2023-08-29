@@ -3,6 +3,7 @@
     ,"Courses": "কোর্সসমূহ"
     ,"About": "সম্পর্কিত"
     ,"Contact": "যোগাযোগ"
+    ,"For Business": "ব্যবসা সংক্রান্ত"
     ,"Career": "করিয়ার"
     ,"Sign Up": "সাইন আপ"
     ,"Job Board": "চাকরির বোর্ড"
@@ -13,4 +14,12 @@
     ,"Copyright": "কপিরাইট"
     ,"Contact us": "যোগাযোগ করুন"
     ,"Privacy Policy": "গোপনীয়তা নীতি"
+    ,"rating-details": "১৫,০০০+ শিক্ষার্থীর দ্বারা ৫ থেকে ৪.৮ রেটিং প্রাপ্ত"
+
+    ,"card.btn.coursedetails": "কোর্স বিবরণ"
+
+    ,"studentsFeedback.heading": "আমাদের ছাত্ররা আমাদের সম্পর্কে কি বলে"
+    ,"studentsFeedback.subheading": "আমাদের সন্তুষ্ট শিক্ষার্থীদের সম্প্রদায়ের সাথে যোগ দিন এবং আপনার শেখার যাত্রা শুরু করুন CourseBee আজ."
+ 
+    ,"newsletter.heading": "আমাদের নিউজলেটার সদস্যতা"
 }

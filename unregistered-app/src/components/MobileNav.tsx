@@ -23,7 +23,7 @@ function MobileNav() {
                             <Link className="nav-link" href="/about"> {t("About")} </Link>
                         </li>
                         <li>
-                            <Link className="nav-link" href="/coming-soon"> {t("Career")} </Link>
+                            <Link className="nav-link" href="/coming-soon"> {t("For Business")} </Link>
                         </li>
                         <li>
                             <a className="nav-link cursor-pointer"> {t("Contact")} </a>
