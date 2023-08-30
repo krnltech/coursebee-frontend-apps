@@ -1,4 +1,9 @@
+import { useTranslation } from "next-i18next";
+import Image from "next/image";
+
 function CareerSection() {
+  const { t } = useTranslation('home');
+  
   return (
     <section className="pt-28 md:pt-44 max-w mx-auto px-4 overflow-x-hidden">
       <div className="grid md:grid-cols-2 items-center justify-between mx-auto">
@@ -11,24 +16,26 @@ function CareerSection() {
             data-delay="0.3"
             className="font-medium text-3xl md:text-4xl leading-10 text-center md:text-start"
           >
-            Grow your career! Start learning with CourseBee.
+            {t("career.heading")}
           </h2>
           <p
             data-animate="text"
             data-delay="0.6"
             className="font-normal leading-6 text-dark-gray py-[30px] text-center md:text-start"
           >
-            Ignite your career growth with Academy. <br />
-            Start your learning journey today.
+            {t("career.subheading1")} <br />
+            {t("career.subheading2")}
           </p>
           <div data-animate="button" data-delay="0.9">
             <button className="btn py-4 px-12 rounded-md font-semibold">
-              Browse Jobs
+            {t("career.btn")}
             </button>
           </div>
         </div>
         <div className="relative flex justify-end mt-10 md:mt-0 overflow-hidden">
-          <img
+          <Image
+            width={566}
+            height={413}
             data-animate="clip-rect"
             data-delay="1.5"
             className="w-full md:w-[90%]"

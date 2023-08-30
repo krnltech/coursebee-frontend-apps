@@ -36,12 +36,10 @@ const Announcement = () => {
             className="max-w-2xl w-full mx-auto object-cover p-[1px]"
             src="/images/courses/carousel-1.png"
             alt="Announcement"
+            data-animate="clip-rect"
+            data-delay="1"
+            data-direction="rtl"
           />
-          <div
-            data-animate="image"
-            data-delay="0.3"
-            className="mask-anime"
-          ></div>
         </div>
         <div>
           <div className="flex gap-3" data-animate="text" data-delay="0.7">
@@ -73,7 +71,7 @@ const Announcement = () => {
             data-animate="text"
             data-delay="1.4"
           >
-            Unleash Python's power: Build robust applications and solve
+            Unleash Python&apos;s power: Build robust applications and solve
             complex problems with this versatile programming language.
           </p>
           <div

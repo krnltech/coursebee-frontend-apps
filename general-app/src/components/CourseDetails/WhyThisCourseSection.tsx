@@ -73,7 +73,7 @@ function WhyThisCourseSection() {
           className="max-w-[280px] text-center"
         >
           UX/UI design is a creative field in which you may utilize your
-          design skills to tackle real-world problems and improve people's
+          design skills to tackle real-world problems and improve people&apos;s
           lives.
         </p>
       </div>

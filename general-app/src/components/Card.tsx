@@ -1,10 +1,14 @@
+import Image from "next/image";
+import Link from "next/link";
+
 interface Props {
   price: string;
   title: string;
   subtitle: string;
   cover: string;
   description: string;
-  category: string [];
+  category: (string|undefined)[];
+  delay?: string|number;
 }
 
 function Card(props: Props) {
@@ -21,7 +25,9 @@ function Card(props: Props) {
             <span className="absolute top-20px right-20px shadow bg-bright-orange text-white rounded-lg px-4 py-3">
               {props.price}
             </span>
-            <img
+            <Image
+              width={382}
+              height={259}
               className="w-full"
               src={props.cover}
               alt={props.title}
@@ -36,9 +42,9 @@ function Card(props: Props) {
             <p className="maxline_3 text-ncolor-600 pb-8">
                 {props.description}
             </p>
-            <a href="/courses/details/">
+            <Link href={`/courses/${props.title.toLowerCase().replace(/[\s']/g, '-')}`}>
               <button className="font-medium btn mx-auto">কোর্স বিবরণ</button>
-            </a>
+            </Link>
           </div>
         </div>
       </div>

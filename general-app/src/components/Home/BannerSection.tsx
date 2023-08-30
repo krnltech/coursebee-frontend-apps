@@ -11,12 +11,16 @@ function BannerSection() {
   return (
     <section className="max-w mx-auto px-4 h-[690px] my-16">
     <div
+      data-animate="clip-rect"
+      data-scale="1"
+      data-delay="0.3"
+      data-direction="rtl"
       className="relative bg-[linear-gradient(to_right_bottom,rgba(0,0,0,0.6),rgba(0,0,0,0.7)),url(/images/home/hero_new_ai_course_2.png)] bg-cover bg-center bg-no-repeat h-full rounded-lg"
     >
       <div
-        data-animate="image"
-        data-delay="0.3"
-        data-direction="rtl"
+        // data-animate="image"
+        // data-delay="0.3"
+        // data-direction="rtl"
         className="absolute top-0 bottom-0 left-0 right-0 bg-white -translate-x-full"
       ></div>
       <div className="absolute inset-0">

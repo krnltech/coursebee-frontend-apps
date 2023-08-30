@@ -26,16 +26,16 @@ function Footer() {
             <div>
                 <h3 className="font-bold text-xl leading-8 pb-7">{t("Quick Links")}</h3>
                 <div className="grid grid-cols-2 justify-between">
-                    <a href="" className="footer-link">{t("Home")}</a>
+                    <a href="/home" className="footer-link">{t("Home")}</a>
                     <a href="" className="footer-link">{t("Android")}</a>
                     <a href="" className="footer-link">{t("Courses")}</a>
                     <a href="" className="footer-link">{t("iOS")}</a>
-                    <a href="" className="footer-link">{t("About")}</a>
+                    <a href="/about" className="footer-link">{t("About")}</a>
                     <a href="" className="footer-link">{t("Login")}</a>
                     <a type="button" onClick={openContact} className="footer-link cursor-pointer">{t("Contact")}</a>
                     <a href="" className="footer-link">{t("Sign Up")}</a>
                     <a href="" className="footer-link">{t("Job Board")}</a>
-                    <a href="" className="footer-link">{t("Career")}</a>
+                    <a href="" className="footer-link">{t("For business")}</a>
                     <a href="" className="footer-link">{t("Privacy Policy")}</a>
                 </div>
             </div>

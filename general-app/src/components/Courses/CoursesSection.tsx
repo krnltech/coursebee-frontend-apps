@@ -78,7 +78,7 @@ function CourseCategoryButton() {
   const { locale } = useRouter();
   return (
     <div className="inline-block pt-6 text-center">
-      {[...categories.keys()].map((category, i) => (
+      {Array.from(categories.keys()).map((category, i) => (
         <button
           key={i + "category"}
           className="min-w-[128px] border rounded-lg mb-2 mx-2 py-2 text-sm transition-all hover:bg-bright-orange hover:text-white"
