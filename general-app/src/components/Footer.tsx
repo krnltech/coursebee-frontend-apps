@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import Contact, { openContact } from "./Contact";
 import Image from 'next/image'
+import Link from "next/link";
 
 function Footer() {
     const {t} = useTranslation();
@@ -26,17 +27,17 @@ function Footer() {
             <div>
                 <h3 className="font-bold text-xl leading-8 pb-7">{t("Quick Links")}</h3>
                 <div className="grid grid-cols-2 justify-between">
-                    <a href="/home" className="footer-link">{t("Home")}</a>
-                    <a href="" className="footer-link">{t("Android")}</a>
-                    <a href="" className="footer-link">{t("Courses")}</a>
-                    <a href="" className="footer-link">{t("iOS")}</a>
-                    <a href="/about" className="footer-link">{t("About")}</a>
-                    <a href="" className="footer-link">{t("Login")}</a>
+                    <Link href="/home" className="footer-link">{t("Home")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("Android")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("Courses")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("iOS")}</Link>
+                    <Link href="/about" className="footer-link">{t("About")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("Login")}</Link>
                     <a type="button" onClick={openContact} className="footer-link cursor-pointer">{t("Contact")}</a>
-                    <a href="" className="footer-link">{t("Sign Up")}</a>
-                    <a href="" className="footer-link">{t("Job Board")}</a>
-                    <a href="" className="footer-link">{t("For business")}</a>
-                    <a href="" className="footer-link">{t("Privacy Policy")}</a>
+                    <Link href="/coming-soon" className="footer-link">{t("Sign Up")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("Job Board")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("For business")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("Privacy Policy")}</Link>
                 </div>
             </div>
 

@@ -2,6 +2,14 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
+  "/api/hello": "pages/api/hello.js",
+  "/coming-soon": "pages/coming-soon.js",
+  "/about": "pages/about.js",
+  "/courses/[title]": "pages/courses/[title].js",
+  "/courses": "pages/courses.js",
   "/": "pages/index.js",
-  "/courses": "pages/courses.js"
+  "/en/500": "pages/en/500.html",
+  "/bn/500": "pages/bn/500.html",
+  "/en/404": "pages/en/404.html",
+  "/bn/404": "pages/bn/404.html"
 }
