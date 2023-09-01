@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 interface Props {
@@ -12,6 +13,7 @@ interface Props {
 }
 
 function Card(props: Props) {
+  const { t } = useTranslation();
   return (
     <>
       <div data-category="Coding,Job Based,Practical">
@@ -43,7 +45,7 @@ function Card(props: Props) {
                 {props.description}
             </p>
             <Link href={`/courses/${props.title.toLowerCase().replace(/[\s']/g, '-')}`}>
-              <button className="font-medium btn mx-auto">কোর্স বিবরণ</button>
+              <button className="font-medium btn mx-auto">{t('card.btn.coursedetails')}</button>
             </Link>
           </div>
         </div>
