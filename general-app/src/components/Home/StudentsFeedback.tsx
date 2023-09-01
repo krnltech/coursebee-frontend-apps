@@ -1,23 +1,34 @@
 import { MouseEvent } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { TbLamp } from 'react-icons/tb';
-import 'keen-slider/keen-slider.min.css'
-import { useKeenSlider } from 'keen-slider/react'
+import 'keen-slider/keen-slider.min.css';
+import { useKeenSlider } from 'keen-slider/react';
+import Image from 'next/image';
+import { useTranslation } from 'next-i18next';
 
 const feedbacks = [
     { username: "James William", userPhoto: "/images/james_william.png", review: "Flexible online learning with interactive assignments boosts skill application and confidence.", course: "Full-Stack Mastery" },
     { username: "James William", userPhoto: "/images/james_william.png", review: "Exceeds expectations with well-structured, engaging courses that are industry-relevant. Exceptional support ensures a smooth learning journey.", course: "Web Design Unleashed" },
-    { username: "James William", userPhoto: "/images/james_william.png", review: "Top-notch courses, knowledgeable and supportive instructors, and comprehensive learning materials. It's a career game-changer!", course: "React Revolution" },
+    { username: "Bobby", userPhoto: "/images/james_william.png", review: "Top-notch courses, knowledgeable and supportive instructors, and comprehensive learning materials. It's a career game-changer!", course: "React Revolution" },
+    { username: "Charlie", userPhoto: "/images/james_william.png", review: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus nesciunt in, assumenda dicta mollitia animi expedita, saepe suscipit, quo id voluptates odit illum! Dolor, non possimus. Voluptatem, ad. Culpa, commodi.", course: "React Revolution" },
 ]
 
 export default function StudentsFeedback() {
+
+    const { t } = useTranslation();
+
     const [sliderRef, instanceRef] = useKeenSlider({
         loop: true,
         mode: "snap",
-        slides: {
-            origin: "center",
-            perView: 'auto',
-        }
+        breakpoints: {
+            "(min-width: 800px)": {
+              slides: { perView: 2 },
+            },
+            "(min-width: 1000px)": {
+              slides: { perView: 3 },
+            },
+          },
+          slides: { perView: 1 },
     },
     [
         (slider) => {
@@ -31,7 +42,7 @@ export default function StudentsFeedback() {
             if (mouseOver) return
             timeout = setTimeout(() => {
               slider.next()
-            }, 2100)
+            }, 1500)
           }
           slider.on("created", () => {
             slider.container.addEventListener("mouseover", () => {
@@ -66,15 +77,14 @@ export default function StudentsFeedback() {
                     data-animate="text"
                     className="text-3xl md:text-[46px] md:leading-[60px] font-medium text-center"
                 >
-                    What our students say about us
+                    {t("studentsFeedback.heading")}
                 </h1>
                 <p
                     data-animate="text"
                     data-delay="0.5"
                     className="py-[15px] px-4 text-center text-dark-gray mx-auto max-w-[682px] font-normal"
                 >
-                    Join our community of satisfied learners and start your learning
-                    journey with CourseBee today.
+                    {t("studentsFeedback.subheading")}
                 </p>
             </div>
 
@@ -123,19 +133,27 @@ const FeedBack = ({ username, userPhoto, review, course }: FeedBackType) => {
             <div data-animate="text" className="py-2 mx-7">
                 <div className="box_shadow py-7 px-7 grid items-end">
                     <div className="flex gap-3 items-center">
-                        <img
+                        <Image
+                            width={45}
+                            height={45}
                             src={userPhoto}
                             alt={username}
                             className="w-[45px] rounded-3xl"
                         />
                         <p className="font-normal md:text-lg">{username}</p>
                     </div>
-                    <p className="py-5"> {review} </p>
-                    <hr className="border-t-2 border-light-gray" />
-                    <div className="flex items-center gap-3 pt-3">
-                        <TbLamp />
-                        <p>{course}</p>
-                    </div>
+                    <p className="my-5 maxline_3 overflow-hidden"> {review} </p>
+                    {
+                        course && (
+                            <>
+                                <hr className="border-t-2 border-light-gray" />
+                                <div className="flex items-center gap-3 pt-3">
+                                    <TbLamp />
+                                    <p>{course}</p>
+                                </div>
+                            </>
+                        )
+                    }
                 </div>
             </div>
         </>

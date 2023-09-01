@@ -1,23 +1,23 @@
+import Image from "next/image";
+import { useTranslation } from "next-i18next";
+
 export default function FeaturedSection() {
+    const { t } =  useTranslation('home');
+
     return (
         <section className="max-w mx-auto px-4 pt-10 md:pt-20 pb-20 md:pb-28">
             <div className="flex w-full flex-col md:flex-row gap-10 md:gap-0">
                 <div className="w-full md:w-2/5 space-y-2 pr-4">
-                    <h2 className="text-2xl font-semibold" data-animate="text">
-                        It’s only a step away.
-                    </h2>
+                    <h2 className="text-2xl font-semibold" data-animate="text">{t('featured.h1')}</h2>
                     <p className="text-xs" data-animate="text" data-delay="0.2">
-                        Join to change your life
+                    {t('featured.s1')}
                     </p>
                     <p
                         className="text-sm text-dark-gray"
                         data-animate="text"
                         data-delay="0.4"
                     >
-                        Trusted by millions of learners worldwide, CourseBee is a leading
-                        platform committed to delivering high-quality education and
-                        empowering individuals. With a wide range of courses for beginners
-                        and experienced professionals, we cater to your learning needs.
+                        {t('featured.d1')}
                     </p>
                 </div>
                 <div
@@ -25,7 +25,7 @@ export default function FeaturedSection() {
                 >
                     <div>
                         <div className="flex items-start gap-4">
-                            <img
+                            <Image width={20} height={20}
                                 src="/icons/people.svg"
                                 alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="0.4"
                             />
@@ -33,105 +33,99 @@ export default function FeaturedSection() {
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="0.6"
                                 >
-                                    Trusted by millions
+                                    {t('featured.h2')}
                                 </h2>
 
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="0.7"
                                 >
-                                    Trusted by millions, CourseBee is the go-to platform for
-                                    high-quality education.
+                                    {t('featured.d2')}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="flex items-start gap-4">
-                            <img className="w-5 h-5 mt-1" data-animate="text" src="/icons/certificate.svg" alt="people" data-delay="0.7"
+                            <Image width={20} height={20} className="w-5 h-5 mt-1" data-animate="text" src="/icons/certificate.svg" alt="people" data-delay="0.7"
                             />
 
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="0.8"
                                 >
-                                    Certificate awarded
+                                    {t('featured.h5')}
                                 </h2>
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="0.9"
                                 >
-                                    Certificates awarded to recognize your achievements. Boost your professional profile with CourseBee.
+                                    {t('featured.d5')}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="flex items-start gap-4">
-                            <img src="/icons/chat.svg" alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="0.9"
+                            <Image width={20} height={20} src="/icons/chat.svg" alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="0.9"
                             />
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="1">
-                                    Chat Online
+                                {t('featured.h3')}
                                 </h2>
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="1.1"
-                                >
-                                    Chat online for instant support and guidance. Connect with CourseBee experts anywhere, anytime.
-                                </p>
+                                >{t('featured.d3')}</p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="flex items-start gap-4">
-                            <img
+                            <Image width={20} height={20}
                                 src="/icons/check.svg" alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="1.1"
                             />
 
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="1.2"
                                 >
-                                    Made by professionals
+                                    {t('featured.h6')}
                                 </h2>
 
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="1.3"
                                 >
-                                    Expertly crafted by professionals in the field. Learn from the
-                                    best with CourseBee.
+                                    {t('featured.d6')}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="flex items-start gap-4">
-                            <img
+                            <Image width={20} height={20}
                                 src="/icons/download.svg"
                                 alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="1.3"
                             />
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="1.4"
                                 >
-                                    Available Offline
+                                    {t('featured.h4')}
                                 </h2>
 
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="1.5"
                                 >
-                                    Access courses offline, anytime. Learn on-the-go with
-                                    CourseBee.
+                                    {t('featured.d4')}
                                 </p>
                             </div>
                         </div>
                     </div>
                     <div>
                         <div className="flex items-start gap-4">
-                            <img
+                            <Image width={20} height={20}
                                 src="/icons/video.svg"
                                 alt="people" className="w-5 h-5 mt-1" data-animate="text" data-delay="1.6"
                             />
                             <div>
                                 <h2 className="text-lg font-bold" data-animate="text" data-delay="1.7"
                                 >
-                                    600+ hours of classes
+                                    {t('featured.h7')}
                                 </h2>
 
                                 <p className="mt-1 text-sm text-dark-gray" data-animate="text" data-delay="1.8"
                                 >
-                                    Unlock over 600 hours of immersive classes. Dive deep into
-                                    learning with CourseBee.
+                                    {t('featured.d7')}
                                 </p>
                             </div>
                         </div>

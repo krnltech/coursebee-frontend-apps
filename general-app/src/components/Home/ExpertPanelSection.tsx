@@ -1,6 +1,10 @@
+import { useTranslation } from "next-i18next"
 import Counter from "./Counter"
+import Image from "next/image";
 
 function ExpertPanelSection() {
+  const { t } = useTranslation('home');
+
   return (
     <section className="max-w mx-auto px-4">
     <div className="pt-[120px]">
@@ -8,28 +12,21 @@ function ExpertPanelSection() {
         data-animate="text"
         className="text-3xl text-center md:text-[45px] md:leading-[60px] font-medium"
       >
-        Meet Our Expert Panel
+        {t("expert.heading")}
       </h2>
       <p
         data-animate="text"
         data-delay="0.2"
         className="pt-[34px] text-center text-dark-gray font-normal mx-auto max-w-[830px]"
       >
-        Discover our esteemed Expert Panel, guiding the structure, strategy,
-        and outcomes of our courses. With their vast knowledge and experience,
-        they uphold the integrity and quality of our education. Our diverse
-        Expert Panel collaborates with our team, ensuring our courses meet
-        high standards and industry trends. Their insights create a robust
-        learning experience for students. <br /><br />
-        From evaluating content to providing recommendations, our Expert Panel
-        continuously enhances course quality. Join us to access courses
-        thoughtfully designed and evaluated by industry experts. Start your
-        learning journey with CourseBee today.
+        {t("expert.subheading1")} <br /><br />{t("expert.subheading2")}
       </p>
       <div className="pt-16 md:pt-32 overflow-hidden">
-        <img
+        <Image
           data-animate="clip-rect"
           data-delay="0.3"
+          width={1290}
+          height={780}
           className="w-full mx-auto max-w"
           src="/images/expert_panel.png"
           alt="Expert Panel"
@@ -48,7 +45,7 @@ function ExpertPanelSection() {
           >
             <Counter end={98}/>
           </p>
-          <p className="pb-4 font-normal text-[18px] mt-2">NPS Score</p>
+          <p className="pb-4 font-normal text-[18px] mt-2">{t("expert.counter.nps")}</p>
         </div>
 
         <div
@@ -59,7 +56,7 @@ function ExpertPanelSection() {
           >
             <Counter end={3000}/>
           </p>
-          <p className="pb-4 font-normal text-[18px] mt-2">Satisfied alumni</p>
+          <p className="pb-4 font-normal text-[18px] mt-2">{t("expert.counter.alumni")}</p>
         </div>
 
         <div
@@ -71,7 +68,7 @@ function ExpertPanelSection() {
             <Counter end={6000}/>
           </p>
           <p className="pb-4 font-normal text-[18px] mt-2">
-            Hours of recorded courses
+          {t("expert.counter.hours")}
           </p>
         </div>
 
@@ -81,7 +78,7 @@ function ExpertPanelSection() {
           >
             <Counter end={50}/>
           </p>
-          <p className="pb-4 font-normal text-[18px] mt-2">Newjoiners weekly</p>
+          <p className="pb-4 font-normal text-[18px] mt-2">{t("expert.counter.newjoiners")}</p>
         </div>
       </div>
     </div>

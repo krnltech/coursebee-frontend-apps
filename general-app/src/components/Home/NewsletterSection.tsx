@@ -1,6 +1,12 @@
-import {IoIosArrowForward} from 'react-icons/io'
+/* eslint-disable @next/next/no-img-element */
+import { useTranslation } from "next-i18next";
+import {IoIosArrowForward} from 'react-icons/io';
+import {useRouter} from 'next/router';
 
 function NewsletterSection() {
+  const { locale } = useRouter();
+  const { t } = useTranslation();
+
   return (
     <section className="pt-28 md:pt-44 max-w mx-auto px-4">
       <div className="bg_circle p-4 mx-auto max-w overflow-x-hidden">
@@ -19,16 +25,29 @@ function NewsletterSection() {
                   data-animate="text"
                   data-delay="0.3"
                 >
-                  Subscribe to our newsletter
+                  {t("newsletter.heading")}
                 </h2>
                 <p
                   className="text-dark-gray pt-2"
                   data-animate="text"
                   data-delay="0.6"
                 >
-                  Join the
-                  <span className="text-bright-orange font-bold">15,000+</span>
-                  students and become part of us.
+                  {
+                    locale === 'en' ? (
+                      <>
+                        Join the
+                        <span className="text-bright-orange font-bold"> 15,000+ </span>
+                        students and become part of us.
+                      </>
+                    )
+                    : (
+                      <>
+                        যোগ দিন 
+                        <span className="text-bright-orange font-bold"> 15,000+ </span>
+                        ছাত্রদের সাথে এবং আমাদের অংশ হয়ে উঠুন।
+                      </>
+                    )
+                  }
                 </p>
               </div>
             </div>

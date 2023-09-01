@@ -51,6 +51,7 @@ function App({ Component, pageProps }: AppProps) {
       </main>
       <Footer />
     </div>
+    {loading && <FullScreenLoader/>}
     </>
   );
 }

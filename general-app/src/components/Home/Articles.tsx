@@ -1,9 +1,12 @@
+import { useTranslation } from "next-i18next";
+
 const articles = [
     {title: "How to getting started with CourseBee with three simple steps!", date: "May 24, 2022", cover: "/images/article_placeholder.png"},
     {title: "Engage into our social platform to win prizes!", date: "May 24, 2022", cover: "/images/article_placeholder.png"},
     {title: "Meet our new instructor for our brand new AI course", date: "May 24, 2022", cover: "/images/article_placeholder.png"},
 ]
 function Articles() {
+  const {t} = useTranslation('home');
   return (
     <section className="pt-28 md:pt-44 max-w mx-auto px-4 overflow-x-hidden">
     <div className="mx-auto">
@@ -14,13 +17,13 @@ function Articles() {
           data-animate="text"
           className="text-3xl md:text-4xl md:leading-[60px] font-medium text-center md:text-start"
         >
-          Read our latest articles
+          {t("articles.heading")}
         </h3>
         <div data-animate="button" data-delay="0.5">
           <button
             className="hidden md:block py-3 px-6 md:py-5 md:px-12 btn leading- font-semibold rounded-md"
           >
-            Browse All Articles
+            {t("articles.btn.browse")}
           </button>
         </div>
       </div>
@@ -43,7 +46,7 @@ function Articles() {
         <button
           className="md:hidden py-4 px-6 bg-bright-orange text-white leading-5 font-semibold rounded-[5px]"
         >
-          Browse all articles
+          {t("articles.btn.browse")}
         </button>
       </div>
     </div>
@@ -60,7 +63,10 @@ interface ArticlePropsType {
 }
 
 const Article = ({title, cover, date}:ArticlePropsType) => {
-    return (
+  
+  const { t } = useTranslation('home');
+  
+  return (
         <>
         <div
           data-animate="card"
@@ -76,7 +82,7 @@ const Article = ({title, cover, date}:ArticlePropsType) => {
               <button
                 className="py-3 px-[20px] border text-bright-orange border-bright-orange rounded-[5px] text-sm font-medium hover:bg-bright-orange hover:text-white transition"
               >
-                Guide
+                {t("articles.btn.guide")}
               </button>
               <time className="text-dark-gray font-semibold"> {date} </time>
             </div>

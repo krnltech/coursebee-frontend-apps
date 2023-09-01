@@ -1,6 +1,7 @@
 import { useTranslation } from "next-i18next";
 import RatingsAndStars from "./RatingsAndStars";
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 function HeroSection() {
     const {t} = useTranslation('home');
@@ -47,7 +48,9 @@ function HeroSection() {
         </div>
 
         <div className="relative h-[300px] md:h-[400px] w-full white-gradiant-left overflow-hidden rounded-2xl">
-          <img
+          <Image
+            width={570}
+            height={400}
             data-animate="clip-rect"
             data-delay="1"
             data-direction="rtl"
