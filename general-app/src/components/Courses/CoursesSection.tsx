@@ -66,7 +66,7 @@ function SearchBar() {
         name="search course"
         id="searchbar"
       />
-      <button className="font-medium text-white bg-bright-orange px-3 py-3 md:px-6 md:py-4 md:min-w-[160px] rounded-md shadow-sm">
+      <button className="font-medium text-bright-orange bg-bright-orange bg-opacity-20 px-3 py-3 md:px-4 md:min-w-[160px] rounded-md shadow-sm">
         <span className="hidden md:block">{t('courses.input.btn')}</span>
         <FiSearch className="block md:hidden" />
       </button>

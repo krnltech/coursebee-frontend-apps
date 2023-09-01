@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { useTranslation } from "next-i18next";
+import {FaArrowRight} from 'react-icons/fa'
 import Link from "next/link";
 
 interface Props {
@@ -24,9 +25,6 @@ function Card(props: Props) {
           data-delay="0.1"
         >
           <div className="relative">
-            <span className="absolute top-20px right-20px shadow bg-bright-orange text-white rounded-lg px-4 py-3">
-              {props.price}
-            </span>
             <Image
               width={382}
               height={259}
@@ -41,11 +39,15 @@ function Card(props: Props) {
               {props.title}
             </p>
             <p className="font-bold md:text-lg">{props.subtitle}</p>
-            <p className="maxline_3 text-ncolor-600 pb-8">
+            <p className="maxline_3 text-ncolor-600">
                 {props.description}
             </p>
+            <p className="text-xl font-semibold text-neutral-600 pt-10 pb-2">৳{props.price} BDT</p>
             <Link href={`/courses/${props.title.toLowerCase().replace(/[\s']/g, '-')}`}>
-              <button className="font-medium btn mx-auto">{t('card.btn.coursedetails')}</button>
+              <button className="flex justify-center items-center gap-4 font-medium w-full bg-bright-orange bg-opacity-10 mx-auto py-3 text-bright-orange rounded-md">
+                <span>{t('card.btn.coursedetails')}</span>
+                <FaArrowRight/>
+              </button>
             </Link>
           </div>
         </div>
