@@ -36,7 +36,7 @@ function Footer() {
                     <a type="button" onClick={openContact} className="footer-link cursor-pointer">{t("Contact")}</a>
                     <Link href="/coming-soon" className="footer-link">{t("Sign Up")}</Link>
                     <Link href="/coming-soon" className="footer-link">{t("Job Board")}</Link>
-                    <Link href="/coming-soon" className="footer-link">{t("For business")}</Link>
+                    <Link href="/coming-soon" className="footer-link">{t("For Business")}</Link>
                     <Link href="/coming-soon" className="footer-link">{t("Privacy Policy")}</Link>
                 </div>
             </div>
