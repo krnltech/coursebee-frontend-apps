@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Accordion from "./Accordion";
 import Instructor from "./Instructor";
+import VideoThumbnail from "./VideoThumbnail";
 
 const accordionData = [
     { summery: "Research and strategy", details: "" },
@@ -35,6 +36,9 @@ export default function CourseModule() {
                 <p className="-mt-[4px] text-sm cut-text">
                   What is UX/UI design and why is it important?
                 </p>
+              </div>
+              <div className="pl-[6px]">
+                <VideoThumbnail/>
               </div>
               <div className="flex items-start gap-3">
                 <div className="timeline">

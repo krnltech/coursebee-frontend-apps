@@ -161,12 +161,12 @@ function CourseInfo() {
                 alt="Time"
               />
               <p
-                className="text-sm sm:text-base sm:ml-1.5"
+                className="text-sm sm:text-base sm:ml-1.5 grid sm:flex items-end"
                 data-animate="text"
                 data-delay="1.8"
               >
                 Time Remaining:
-                <span className="font-medium text-bright-orange">23:04:15</span>
+                <span className="font-medium text-bright-orange"> 23:04:15</span>
               </p>
             </div>
           </div>
