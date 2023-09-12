@@ -19,7 +19,7 @@ const EnrolledCourseCard = ({ price, progress, date }: Props) => {
           width={278}
           height={278}
           priority
-          objectFit="cover"
+          className="object-cover"
         />
       </div>
 

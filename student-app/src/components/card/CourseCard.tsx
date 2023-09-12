@@ -5,7 +5,7 @@ const CourseCard = () => {
   return (
     <div className="relative block overflow-hidden group w-[400px] border rounded-xl">
       {/* Price */}
-      <Button className="absolute z-10 py-2 font-medium top-5 right-4">
+      <Button className="absolute py-2 font-medium top-5 right-4">
         &#2547; 4999.99 BDT
       </Button>
 
@@ -16,7 +16,7 @@ const CourseCard = () => {
           width={278}
           height={278}
           priority
-          objectFit="cover"
+          className="object-cover"
         />
       </div>
 
