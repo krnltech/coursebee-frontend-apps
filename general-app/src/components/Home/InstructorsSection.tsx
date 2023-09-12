@@ -1,14 +1,12 @@
-import Image from "next/image"
-import { useTranslation } from "next-i18next"
+import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 function InstructorsSection() {
-  const { t } = useTranslation('home');
+  const { t } = useTranslation("home");
 
   return (
-    <section className="max-w mx-auto px-4 overflow-x-hidden">
-      <div
-        className="grid md:grid-cols-2 gap-[75px] md:justify-between items-center pt-28 md:pt-40 p-2 mx-auto max-w"
-      >
+    <section className="px-4 mx-auto overflow-x-hidden max-w">
+      <div className="grid md:grid-cols-2 gap-[75px] md:justify-between pt-28 md:pt-40 p-2 mx-auto max-w">
         <div className="text-start md:px-8">
           <h2
             data-animate="text"
@@ -30,16 +28,14 @@ function InstructorsSection() {
           >
             {t("instructors.subheading2")}
           </p>
-          <div
-            className="pt-[34px] flex gap-4 flex-col md:flex-row"
-          >
-            <div className="mx-auto" data-animate="button" data-delay="1.5">
-              <button className="btn font-semibold py-4">{t("instructors.btn.join")}</button>
+          <div className="pt-[34px] flex flex-col md:flex-row gap-8">
+            <div data-animate="button" data-delay="1.5">
+              <button className="py-4 font-semibold btn">
+                {t("instructors.btn.join")}
+              </button>
             </div>
-            <div className="mx-auto" data-animate="button" data-delay="2">
-              <button
-                className="btn bg-white text-black shadow border font-semibold py-4"
-              >
+            <div data-animate="button" data-delay="2">
+              <button className="py-4 font-semibold text-black bg-white border shadow btn">
                 {t("instructors.btn.view")}
               </button>
             </div>
@@ -58,7 +54,7 @@ function InstructorsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
-export default InstructorsSection
+export default InstructorsSection;

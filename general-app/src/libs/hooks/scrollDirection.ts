@@ -5,11 +5,11 @@ function useScrollDirection() {
 
   useEffect(() => {
     const threshold = 0;
-    let lastScrollY = window.pageYOffset;
+    let lastScrollY = window.scrollY;
     let ticking = false;
 
     const updateScrollDir = () => {
-      const scrollY = window.pageYOffset;
+      const scrollY = window.scrollY;
 
       if (Math.abs(scrollY - lastScrollY) < threshold) {
         ticking = false;
@@ -31,7 +31,7 @@ function useScrollDirection() {
 
     return () => window.removeEventListener("scroll", onScroll);
   }, [scrollDir]);
-  return [scrollDir, setScrollDir]
+  return [scrollDir, setScrollDir];
 }
 
 export default useScrollDirection;

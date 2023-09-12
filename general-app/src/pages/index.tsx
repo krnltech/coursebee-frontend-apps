@@ -10,36 +10,37 @@ import InstructorsSection from "@/components/Home/InstructorsSection";
 import NewsletterSection from "@/components/Home/NewsletterSection";
 import SocialMediaSection from "@/components/Home/SocialMediaSection";
 import StudentsFeedback from "@/components/Home/StudentsFeedback";
-import { GetStaticProps } from "next"
+import { GetStaticProps } from "next";
 import { i18n } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations"
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export default function Home() {
   return (
     <>
-      <HeroSection/>
+      <HeroSection />
       <BannerSection />
-      <FeaturedSection/>
+      <FeaturedSection />
       <BrowseOurCourseSection />
       <StudentsFeedback />
       <InstructorsSection />
       <ExpertPanelSection />
-      <CareerSection/>
-      <Articles/>
+      <CareerSection />
+      <Articles />
       <SocialMediaSection />
       <EnrollSection />
       <NewsletterSection />
     </>
-  )
+  );
 }
 
-export const getStaticProps:GetStaticProps = async ({ locale }) => {
+export const getStaticProps: GetStaticProps = async ({ locale }) => {
   if (process.env.NODE_ENV === "development") {
     await i18n?.reloadResources();
   }
 
-  return { props: {
-    ...(await serverSideTranslations(locale || "en", ['common', 'home',]))
-  }
-  }
-}
+  return {
+    props: {
+      ...(await serverSideTranslations(locale || "en", ["common", "home"])),
+    },
+  };
+};

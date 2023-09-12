@@ -12,7 +12,7 @@
 
 @layer base {
   body {
-    @apply font-inter text-black overflow-x-hidden;
+    @apply overflow-x-hidden text-black font-inter;
   }
   html,
   body {
@@ -24,22 +24,22 @@
   ::-webkit-scrollbar {
     width: 8px;
   }
-  
+
   /* Track */
   ::-webkit-scrollbar-track {
-    box-shadow: inset 0 0 5px lightgrey; 
+    box-shadow: inset 0 0 5px lightgrey;
     border-radius: 10px;
   }
-   
+
   /* Handle */
   ::-webkit-scrollbar-thumb {
     background: rgb(255 79 0);
     border-radius: 10px;
   }
-  
+
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(212, 67, 5); 
+    background: rgb(212, 67, 5);
   }
 }
 
@@ -51,12 +51,11 @@
     grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
     text-align: center;
   }
-  
 }
 
 @layer components {
   .nav-link {
-    @apply text-black hover:text-black/80 text-sm md:text-xs lg:text-sm font-medium hover:text-bright-orange transition duration-200;
+    @apply text-sm font-medium text-black transition duration-200 hover:text-black/80 md:text-xs lg:text-sm hover:text-bright-orange;
   }
   .nav-active {
     @apply text-bright-orange;
@@ -65,7 +64,7 @@
     @apply md:hidden flex items-center justify-center p-1.5 rounded-md transition-all hover:bg-bright-orange hover:text-white;
   }
   .mobile-nav {
-    @apply transition-all md:py-4 gap-3 lg:gap-6 fixed bg-white shadow-sm top-0 right-0 h-screen translate-x-full -z-10 opacity-0 group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:z-10;
+    @apply fixed top-0 right-0 h-screen gap-3 transition-all translate-x-full bg-white shadow-sm opacity-0 md:py-4 lg:gap-6 -z-10 group-focus-within:opacity-100 group-focus-within:translate-x-0 group-focus-within:z-10;
     width: min(50%, 300px);
   }
   .btn {
@@ -75,10 +74,10 @@
     @apply block border-2 rounded-md px-6 md:px-8 py-2 text-sm font-medium text-ncolor-800 transition duration-300 hover:bg-bright-orange hover:text-white hover:border-bright-orange [word-spacing:2px];
   }
   .course-btn {
-    @apply bg-off-white text-sm hover:bg-bright-orange hover:text-white transition;
+    @apply text-sm transition bg-off-white hover:bg-bright-orange hover:text-white;
   }
   .cb-container {
-    @apply lg:px-48 md:px-12 px-6;
+    @apply px-6 lg:px-48 md:px-12;
   }
   .footer-link {
     @apply block font-medium leading-8 text-dark-gray hover:text-bright-orange hover:font-semibold;
@@ -87,7 +86,7 @@
     @apply max-w-[1290px] mx-auto;
   }
   .mask-anime {
-    @apply absolute top-0 bottom-0 left-0 right-0 bg-white translate-x-full;
+    @apply absolute top-0 bottom-0 left-0 right-0 translate-x-full bg-white;
   }
   .vline {
     @apply h-[20px] sm:h-[25px] ml-[6px] border-[1px] border-dashed border-[#a3a5b5];
@@ -352,4 +351,34 @@
   opacity: 0;
   z-index: -10;
   transform: translateX(100%);
+}
+
+/* Keen - Slider */
+.navigation-wrapper {
+  position: relative;
+}
+
+.dots {
+  display: flex;
+  padding: 10px 0;
+  justify-content: center;
+}
+
+.dot {
+  border: none;
+  width: 12px;
+  height: 12px;
+  background: #ffd9c8;
+  border-radius: 50%;
+  margin: 0 5px;
+  padding: 5px;
+  cursor: pointer;
+}
+
+.dot:focus {
+  outline: none;
+}
+
+.dot.active {
+  background: #ff4f00;
 }
