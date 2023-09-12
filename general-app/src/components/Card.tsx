@@ -42,7 +42,7 @@ function Card(props: Props) {
             <p className="maxline_3 text-ncolor-600">
                 {props.description}
             </p>
-            <p className="text-xl font-semibold text-neutral-600 pt-10 pb-2">৳{props.price} BDT</p>
+            <p className="text-xl font-semibold text-neutral-600 pt-10 pb-2">৳{props.price} {t('bdt')}</p>
             <Link href={`/courses/${props.title.toLowerCase().replace(/[\s']/g, '-')}`}>
               <button className="flex justify-center items-center gap-4 font-medium w-full bg-bright-orange bg-opacity-10 mx-auto py-3 text-bright-orange rounded-md">
                 <span>{t('card.btn.coursedetails')}</span>

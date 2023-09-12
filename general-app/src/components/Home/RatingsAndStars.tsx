@@ -3,7 +3,7 @@ import UserRating from "./UserRating";
 
 
 function RatingsAndStars() {
-    const {t} = useTranslation('home');
+    const {t} = useTranslation('common');
     
   return (
     <>
