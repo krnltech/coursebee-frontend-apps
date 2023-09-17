@@ -9,7 +9,7 @@ interface Props {
 }
 const CourseSelectionTab = ({ selectionTab, setSelectionTab }: Props) => {
   const className =
-    "px-8 py-3 font-medium text-black transition-colors duration-200 border shadow-sm cursor-pointer rounded-xl";
+    "px-4 py-2 font-medium text-black transition-colors duration-200 border shadow-sm cursor-pointer rounded-xl";
   return (
     <div className="flex items-center gap-4">
       <div

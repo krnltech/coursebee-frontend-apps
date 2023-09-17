@@ -1,14 +1,15 @@
 "use client";
 import Badge from "@/components/Badge";
 import { Button } from "@/components/ui/button";
+import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
 
 const ProfileCard = () => {
   const router = useRouter();
   return (
-    <div className="p-16 mt-24 border rounded-xl">
-      <h3 className="font-normal">Personal Information</h3>
+    <div className="p-12 mt-12 border rounded-xl">
+      <h4 className="title">Personal Information</h4>
       <p className="text-[22px] leading-8 text-neutral-700 mt-2">
         Here you can view public information about yourself.
       </p>
@@ -44,9 +45,17 @@ const ProfileCard = () => {
       </div>
 
       <Button
-        className="mt-8 px-14"
+        className="px-8 py-6 mt-8"
+        variant="light"
         onClick={() => router.push("/profile/edit")}
       >
+        <Image
+          src={"/icons/edit.svg"}
+          alt="edit"
+          width={24}
+          height={24}
+          className="mr-1.5"
+        />
         Edit Profile
       </Button>
     </div>

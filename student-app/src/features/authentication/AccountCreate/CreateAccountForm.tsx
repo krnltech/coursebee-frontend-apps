@@ -4,24 +4,22 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import * as z from "zod";
 
 import { Button } from "@/components/ui/button";
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
+import { Form } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import HookFormItem from "@/components/hookform/HookFormItem";
 
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z.string(),
-});
+const FormSchema = z
+  .object({
+    firstName: z.string().min(3, {
+      message: "First name must be at least 3 characters.",
+    }),
+    lastName: z.string().min(2, {
+      message: "Last name must be at least 2 characters.",
+    }),
+    email: z.string().email(),
+  })
+  .required();
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
@@ -29,7 +27,9 @@ export function CreateAccountForm() {
   const form = useForm<FormSchemaType>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
-      username: "",
+      firstName: "",
+      lastName: "",
+      email: "",
     },
   });
 
@@ -44,60 +44,20 @@ export function CreateAccountForm() {
       >
         <h3>Create Account</h3>
         <div className="flex-1 max-w-md space-y-6 ">
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field, fieldState: { error } }) => (
-              <FormItem>
-                <FormLabel>First Name</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your first name"
-                    {...field}
-                    error={error?.message}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field, fieldState: { error } }) => (
-              <FormItem>
-                <FormLabel>Last Name</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your last name"
-                    {...field}
-                    error={error?.message}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field, fieldState: { error } }) => (
-              <FormItem>
-                <FormLabel>Email</FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your email"
-                    {...field}
-                    error={error?.message}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <HookFormItem name="firstName" label="First Name">
+            <Input placeholder="Enter your first name" />
+          </HookFormItem>
+          <HookFormItem name="lastName" label="Last Name">
+            <Input placeholder="Enter your last name" />
+          </HookFormItem>
+          <HookFormItem name="email" label="Email">
+            <Input placeholder="Enter your email" />
+          </HookFormItem>
         </div>
         <div className="flex items-center justify-center gap-4 pb-20">
-          <Button variant="outline">Cancel</Button>
+          <Button variant="outline" type="button">
+            Cancel
+          </Button>
           <Button type="submit">Create</Button>
         </div>
       </form>

@@ -4,7 +4,8 @@ import EnrolledCourseCard from "@/components/card/EnrolledCourseCard";
 import InProgressCourseCard from "@/components/card/InProgressCourseCard";
 import FilterDropdown from "@/components/dropdown/FilterDropdown";
 import SimilarCourse from "@/features/course/SimilarCourse";
-import CourseSelectionTab from "@/features/myCourse/CourseSelectionTab";
+import CourseSelectionTab from "@/features/enrolledCourse/CourseSelectionTab";
+import NoEnrolledCourse from "@/features/enrolledCourse/NoEnrolledCourse";
 import { CourseSelectionTabType } from "@/models/course";
 import { ArrowLeft, ArrowRight } from "lucide-react";
 import { useState } from "react";
@@ -23,7 +24,7 @@ const MyCoursePage = () => {
     <div>
       <div className="flex items-center justify-between mt-12">
         <div>
-          <h3 className="font-medium">My courses</h3>
+          <h2 className="font-semibold">My Courses</h2>
         </div>
         <div>
           <CourseSelectionTab
@@ -32,9 +33,7 @@ const MyCoursePage = () => {
           />
         </div>
       </div>
-
-      <Searchbox className="mt-16" placeholder="Search Course" />
-
+      <Searchbox className="mt-8 bg-white" placeholder="Search Course" />
       <div className="flex justify-end my-6">
         <FilterDropdown dropdownItems={dropdownItems} />
       </div>
@@ -52,12 +51,10 @@ const MyCoursePage = () => {
           ))}
         </div>
       )}
-
       <div className="flex items-center justify-center gap-2 mt-8 text-neutral-500">
         <ArrowLeft className="cursor-pointer" />
         <ArrowRight className="cursor-pointer" />
       </div>
-
       <div className="mt-40">
         <SimilarCourse />
       </div>

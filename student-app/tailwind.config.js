@@ -58,6 +58,9 @@ module.exports = {
         // Custom Colors
         orange: {
           light: "#FFF1EB",
+          50: "#FFFBF9",
+          400: "#FF793D",
+          500: "#FF4F00",
         },
         offWhite: "#FFFDF9",
         black: {
@@ -79,7 +82,7 @@ module.exports = {
           400: "#c7c7c7",
           500: "#a3a5b5",
           600: "#6E7991",
-          700: "#545D73",
+          700: "#3D4752",
           800: "#1F2F54",
         },
       },

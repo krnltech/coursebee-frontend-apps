@@ -1,7 +1,6 @@
 import * as React from "react";
 
 import { cn } from "@/lib/utils";
-import { error } from "console";
 
 export interface InputProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -11,7 +10,18 @@ export interface InputProps
 }
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, placeholder, error, label, ...props }, ref) => {
+  (
+    {
+      className,
+      type,
+      placeholder,
+      error,
+      label,
+      autoComplete = "off",
+      ...props
+    },
+    ref
+  ) => {
     return (
       <>
         {label && (
@@ -29,6 +39,7 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
             error && " focus-visible:ring-danger",
             className
           )}
+          autoComplete={autoComplete}
           placeholder={placeholder ?? ""}
           ref={ref}
           {...props}

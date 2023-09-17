@@ -5,8 +5,8 @@ import React from "react";
 const SimilarCourse = () => {
   return (
     <div>
-      <h3 className="font-medium text-center">Similar Courses</h3>
-      <div className="grid grid-cols-3 mt-12 justify-items-center gap-y-8">
+      <h3 className="font-bold text-center">Similar Courses</h3>
+      <div className="grid grid-cols-3 gap-4 mt-12 justify-items-center">
         {[1, 2, 3].map((item) => (
           <CourseCard key={item} />
         ))}

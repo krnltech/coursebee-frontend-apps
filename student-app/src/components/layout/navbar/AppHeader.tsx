@@ -9,7 +9,6 @@ import useScrollDirection from "@/hooks/useScrollDirection";
 function AppHeader() {
   const [scrollDir] = useScrollDirection();
   const pathname = usePathname();
-  // const { pathname, locale } = useRouter();
 
   return (
     <header
@@ -43,7 +42,7 @@ function AppHeader() {
               className={`nav-link ${
                 pathname == "/courses" ? "nav-active" : ""
               }`}
-              href="/courses"
+              href="/course/enrolled"
             >
               Courses
             </Link>
@@ -88,7 +87,10 @@ function AppHeader() {
               />
               <p>En</p>
             </Link>
-            <div className="flex rounded-md border-[1px] border-light-gray px-6 md:px-8 text-sm font-medium transition items-center gap-1 hover:bg-slate-100">
+            <Link
+              href="/profile"
+              className="flex rounded-md border-[1px] border-light-gray px-6 md:px-8 text-sm font-medium transition items-center gap-1 hover:bg-slate-100"
+            >
               <Image
                 width={18}
                 height={30}
@@ -96,7 +98,7 @@ function AppHeader() {
                 alt="language"
               />
               <p>Jarif</p>
-            </div>
+            </Link>
           </div>
         </div>
       </nav>

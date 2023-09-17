@@ -18,13 +18,28 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { useForm } from "react-hook-form";
+import { PHONE_VALIDATION } from "@/constants";
+import HookFormItem from "@/components/hookform/HookFormItem";
 
-const FormSchema = z.object({
-  username: z.string().min(2, {
-    message: "Username must be at least 2 characters.",
-  }),
-  email: z.string(),
-});
+const FormSchema = z
+  .object({
+    username: z.string().min(2, {
+      message: "Username must be at least 2 characters.",
+    }),
+    firstName: z.string().min(3, "First Name must be at least 3 characters"),
+    lastName: z.string().min(3, "Last Name must be at least 3 characters"),
+    email: z.string(),
+    mobile: z
+      .string()
+      .regex(PHONE_VALIDATION, "Please enter a valid phone number"),
+    current_password: z.string(),
+    new_password: z.string(),
+    confirm_password: z.string(),
+  })
+  .refine((data) => data.new_password === data.confirm_password, {
+    message: "Password don't match",
+    path: ["confirm_password"],
+  });
 
 type FormSchemaType = z.infer<typeof FormSchema>;
 
@@ -34,6 +49,13 @@ const EditProfileForm = () => {
     resolver: zodResolver(FormSchema),
     defaultValues: {
       username: "",
+      firstName: "",
+      lastName: "",
+      email: "",
+      mobile: "",
+      current_password: "",
+      new_password: "",
+      confirm_password: "",
     },
   });
 
@@ -43,7 +65,7 @@ const EditProfileForm = () => {
 
   return (
     <div className="p-16 mt-24 border rounded-xl">
-      <h3 className="font-normal">Edit Profile</h3>
+      <h4 className="title">Edit Profile</h4>
       <p className="text-[22px] leading-8 text-neutral-700 mt-2">
         Here you can edit public information about yourself.
       </p>
@@ -54,65 +76,21 @@ const EditProfileForm = () => {
           className="mt-16 space-y-8"
         >
           <div className="flex w-full gap-8">
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field, fieldState: { error } }) => (
-                <FormItem className="w-1/3 ">
-                  <FormLabel>First Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your first name"
-                      {...field}
-                      error={error?.message}
-                      className=""
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field, fieldState: { error } }) => (
-                <FormItem className="w-1/3">
-                  <FormLabel>Last Name</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your first name"
-                      {...field}
-                      error={error?.message}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <HookFormItem name="firstName" label="First Name" className="w-1/3">
+              <Input placeholder="Enter your first name" />
+            </HookFormItem>
+            <HookFormItem name="lastName" label="Last Name" className="w-1/3">
+              <Input placeholder="Enter your last name" />
+            </HookFormItem>
           </div>
 
           <div className="flex w-full gap-8">
+            <HookFormItem name="email" label="Email" className="w-1/3">
+              <Input placeholder="Enter your email" />
+            </HookFormItem>
             <FormField
               control={form.control}
-              name="username"
-              render={({ field, fieldState: { error } }) => (
-                <FormItem className="w-1/3 ">
-                  <FormLabel>Email</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter your email"
-                      {...field}
-                      error={error?.message}
-                      className=""
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="username"
+              name="mobile"
               render={({ field, fieldState: { error } }) => (
                 <FormItem className="w-1/3">
                   <FormLabel className="flex items-center gap-2">
@@ -132,62 +110,29 @@ const EditProfileForm = () => {
             />
           </div>
 
-          <FormField
-            control={form.control}
-            name="username"
-            render={({ field, fieldState: { error } }) => (
-              <FormItem className="w-1/3">
-                <FormLabel className="flex items-center gap-2">
-                  Current Password
-                </FormLabel>
-                <FormControl>
-                  <Input
-                    placeholder="Enter your first name"
-                    {...field}
-                    error={error?.message}
-                  />
-                </FormControl>
-                <FormMessage />
-              </FormItem>
-            )}
-          />
+          <HookFormItem
+            name="current_password"
+            label="Current Password"
+            className="w-1/3"
+          >
+            <Input placeholder="Enter your current password" type="password" />
+          </HookFormItem>
 
           <div className="flex w-full gap-8">
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field, fieldState: { error } }) => (
-                <FormItem className="w-1/3 ">
-                  <FormLabel>New Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Enter new password"
-                      {...field}
-                      error={error?.message}
-                      className=""
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
-            <FormField
-              control={form.control}
-              name="username"
-              render={({ field, fieldState: { error } }) => (
-                <FormItem className="w-1/3">
-                  <FormLabel>Retype Password</FormLabel>
-                  <FormControl>
-                    <Input
-                      placeholder="Retype your new password"
-                      {...field}
-                      error={error?.message}
-                    />
-                  </FormControl>
-                  <FormMessage />
-                </FormItem>
-              )}
-            />
+            <HookFormItem
+              name="new_password"
+              label="New Password"
+              className="w-1/3"
+            >
+              <Input placeholder="Enter new password" type="password" />
+            </HookFormItem>
+            <HookFormItem
+              name="confirm_password"
+              label="Confirm Password"
+              className="w-1/3"
+            >
+              <Input placeholder="Retype your new password" type="password" />
+            </HookFormItem>
           </div>
 
           <div className="flex justify-end gap-4 !mt-20">
