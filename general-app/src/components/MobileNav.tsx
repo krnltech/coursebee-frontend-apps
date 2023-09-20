@@ -14,9 +14,6 @@ function MobileNav() {
                 >
                     <div className="flex items-center justify-center h-full flex-col gap-4">
                         <li>
-                            <Link className="nav-link" href="/"> {t("Home")} </Link>
-                        </li>
-                        <li>
                             <Link className="nav-link" href="/courses"> {t("Courses")} </Link>
                         </li>
                         <li>
@@ -24,9 +21,6 @@ function MobileNav() {
                         </li>
                         <li>
                             <Link className="nav-link" href="/coming-soon"> {t("For Business")} </Link>
-                        </li>
-                        <li>
-                            <a className="nav-link cursor-pointer"> {t("Contact")} </a>
                         </li>
                         <li>
                             <Link className="nav-link" href="/coming-soon"> {t("Sign Up")} </Link>

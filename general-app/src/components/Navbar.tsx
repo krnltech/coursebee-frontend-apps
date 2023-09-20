@@ -22,12 +22,10 @@ function Navbar() {
                     />
                 </Link>
                 {/* <!-- Desktop Nav --> */}
-                <ul className="hidden md:flex items-center gap-6">
-                    <li> <Link className={`nav-link ${asPath =="/" ? "nav-active" : ""}`} href="/"> {t("Home")} </Link> </li>
+                <ul className="hidden md:flex items-center gap-6 gap-x-16">
                     <li> <Link className={`nav-link ${asPath =="/courses" ? "nav-active" : ""}`} href="/courses"> {t("Courses")} </Link> </li>
                     <li> <Link className={`nav-link ${asPath =="/about" ? "nav-active" : ""}`} href="/about"> {t("About")} </Link> </li>
                     <li> <Link className={`nav-link ${asPath =="/for-business" ? "nav-active" : ""}`} href="/coming-soon"> {t("For Business")} </Link> </li>
-                    <li> <a type="button" onClick={openContact} className="nav-link cursor-pointer">{t("Contact")}</a> </li>
                 </ul>
 
                 <div className="flex flex-row items-center gap-2">
