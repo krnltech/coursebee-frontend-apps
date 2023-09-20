@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  student-app:
+    container_name: student-app-frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3011:3001'
+    networks:
+      - coursebee
+networks:
+  coursebee:
+    driver: bridge

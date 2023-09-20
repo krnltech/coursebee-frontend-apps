@@ -2,7 +2,7 @@
 
 | Description      | Port |
 | ---------------- | ---- |
-| unregistered-app | 3000 |
-| student-app      | 3001 |
-| instructor-app   | 3002 |
-| company-app      | 3003 |
+| unregistered-app | 3010 |
+| student-app      | 3011 |
+| instructor-app   | N/A  |
+| company-app      | 3015 |

@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  company-app:
+    container_name: company-app-frontend
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    restart: always
+    ports:
+      - '3015:3003'
+    networks:
+      - coursebee
+networks:
+  coursebee:
+    driver: bridge
