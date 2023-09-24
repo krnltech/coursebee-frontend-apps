@@ -28,7 +28,7 @@ function AppHeader() {
           />
         </Link>
         {/* <!-- Desktop Nav --> */}
-        <ul className="items-center hidden gap-6 md:flex">
+        <ul className="items-center hidden gap-10 md:flex">
           <li>
             <Link
               className={`nav-link ${pathname == "/" ? "nav-active" : ""}`}
@@ -40,19 +40,11 @@ function AppHeader() {
           <li>
             <Link
               className={`nav-link ${
-                pathname == "/courses" ? "nav-active" : ""
+                pathname.startsWith("/course") ? "nav-active" : ""
               }`}
               href="/course/enrolled"
             >
               Courses
-            </Link>
-          </li>
-          <li>
-            <Link
-              className={`nav-link ${pathname == "/about" ? "nav-active" : ""}`}
-              href="/about"
-            >
-              About
             </Link>
           </li>
           <li>
@@ -64,11 +56,6 @@ function AppHeader() {
             >
               For Business
             </Link>
-          </li>
-          <li>
-            <a type="button" className="cursor-pointer nav-link">
-              Contact
-            </a>
           </li>
         </ul>
 

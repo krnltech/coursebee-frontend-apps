@@ -31,7 +31,7 @@ const EnrolledCourseCard = ({ price, progress, date }: Props) => {
           Python Powerhouse
         </p>
         {/* Subtitle */}
-        <h4 className="text-[22px] text-black font-semibold">
+        <h4 className="font-semibold text-black text-title">
           Unlocking Its Full Potential
         </h4>
         {/* Description */}

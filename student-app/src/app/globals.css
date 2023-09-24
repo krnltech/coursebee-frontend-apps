@@ -103,7 +103,7 @@
     @apply min-h-screen;
   }
   .title {
-    @apply text-black text-[22px] font-semibold;
+    @apply font-semibold text-black text-title;
   }
   .title-secondary {
     @apply text-base font-semibold leading-6 text-black;
@@ -113,6 +113,15 @@
   }
   .footer-link {
     @apply block font-medium leading-8 text-gray-dark hover:text-primary hover:font-semibold;
+  }
+  .tab-item {
+    @apply px-6 pb-4 font-semibold list-none transition-all duration-200 ease-in-out border-b-2 border-transparent cursor-pointer text-neutral-700 shrink-0 hover:text-orange-400;
+  }
+  .tab-item-active {
+    @apply font-semibold text-primary border-primary;
+  }
+  .nav-active {
+    @apply font-medium text-primary;
   }
 }
 

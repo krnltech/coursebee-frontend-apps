@@ -66,7 +66,7 @@ const EditProfileForm = () => {
   return (
     <div className="p-16 mt-24 border rounded-xl">
       <h4 className="title">Edit Profile</h4>
-      <p className="text-[22px] leading-8 text-neutral-700 mt-2">
+      <p className="mt-2 leading-8 text-title text-neutral-700">
         Here you can edit public information about yourself.
       </p>
 

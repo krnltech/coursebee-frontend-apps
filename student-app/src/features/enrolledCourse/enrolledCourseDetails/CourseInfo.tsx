@@ -6,9 +6,11 @@ import { Grip, Trophy } from "lucide-react";
 import Image from "next/image";
 import { useState } from "react";
 import CourseStats from "./CourseStats";
+import { useRouter } from "next/navigation";
 
 const CourseInfo = () => {
   const [showCourseStats, setShowCourseStats] = useState<boolean>(false);
+  const router = useRouter();
   return (
     <div className="mt-24 ">
       <div className="flex w-full">
@@ -70,7 +72,12 @@ const CourseInfo = () => {
           >
             <Grip className="w-4 h-4 mr-1" /> Details
           </Button>
-          <Button variant="outline" size="sm" className="py-3 rounded-lg">
+          <Button
+            variant="outline"
+            size="sm"
+            className="py-3 rounded-lg"
+            onClick={() => router.push("/leaderboard")}
+          >
             <Trophy className="w-4 h-4 mr-1 text-neutral-700" />
             Leaderboard
           </Button>

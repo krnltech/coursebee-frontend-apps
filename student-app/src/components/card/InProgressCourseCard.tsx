@@ -1,10 +1,13 @@
+"use client";
 import Image from "next/image";
 import { Progress } from "../ui/progress";
 import Badge from "../Badge";
 import { MoreVertical } from "lucide-react";
 import { Button } from "../ui/button";
+import { useRouter } from "next/navigation";
 
 const InProgressCourseCard = () => {
+  const router = useRouter();
   return (
     <div className="h-[325px] border rounded-xl flex">
       <div className="flex items-center justify-center w-1/4 h-full transition duration-500 bg-offWhite rounded-l-xl">
@@ -24,7 +27,7 @@ const InProgressCourseCard = () => {
             Python Powerhouse
           </p>
           {/* Subtitle */}
-          <h4 className="text-[22px] text-black font-semibold">
+          <h4 className="font-semibold text-black text-title">
             Unlocking Its Full Potential
           </h4>
           {/* Description */}
@@ -69,10 +72,20 @@ const InProgressCourseCard = () => {
             </p>
           </div>
           <div className="ml-auto space-x-3">
-            <Button variant="light" size="sm" className="font-semibold">
+            <Button
+              variant="light"
+              size="sm"
+              className="font-semibold"
+              onClick={() => router.push("/leaderboard")}
+            >
               Leaderboard
             </Button>
-            <Button size="sm">Start Now</Button>
+            <Button
+              size="sm"
+              onClick={() => router.push("/course/enrolled/123")}
+            >
+              Start Now
+            </Button>
           </div>
         </div>
       </div>

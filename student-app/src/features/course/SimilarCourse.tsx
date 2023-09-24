@@ -12,9 +12,9 @@ const SimilarCourse = () => {
         ))}
       </div>
 
-      <div className="flex items-center justify-center gap-2 mt-8 text-neutral-500">
-        <ArrowLeft className="cursor-pointer" />
-        <ArrowRight className="cursor-pointer" />
+      <div className="flex items-center justify-center gap-4 mt-8 text-neutral-500">
+        <ArrowLeft className="w-10 h-10 p-2.5 text-black rounded-full cursor-pointer bg-neutral-100" />
+        <ArrowRight className="w-10 h-10 p-2.5 text-black rounded-full cursor-pointer bg-neutral-100" />
       </div>
     </div>
   );

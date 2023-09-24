@@ -10,7 +10,7 @@ const ProfileCard = () => {
   return (
     <div className="p-12 mt-12 border rounded-xl">
       <h4 className="title">Personal Information</h4>
-      <p className="text-[22px] leading-8 text-neutral-700 mt-2">
+      <p className="mt-2 leading-8 text-title text-neutral-700">
         Here you can view public information about yourself.
       </p>
 

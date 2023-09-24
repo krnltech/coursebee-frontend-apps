@@ -20,7 +20,9 @@ module.exports = {
         inter: ["Inter", "sans-serif"],
         "noto-sans": ["Noto Sans Bengali", "sans-serif"],
       },
-
+      fontSize: {
+        title: "22px",
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -64,7 +66,7 @@ module.exports = {
         },
         offWhite: "#FFFDF9",
         black: {
-          DEFAULT: "#1F293D",
+          DEFAULT: "#0C0F12",
           100: "#201515",
         },
         gray: {
@@ -77,10 +79,11 @@ module.exports = {
         },
         danger: "#CF161C",
         neutral: {
+          100: "#F6F7F8",
           200: "#EBEEF3",
-          300: "#EDEDED",
+          300: "#A4B0C3",
           400: "#c7c7c7",
-          500: "#a3a5b5",
+          500: "#768498",
           600: "#6E7991",
           700: "#3D4752",
           800: "#1F2F54",

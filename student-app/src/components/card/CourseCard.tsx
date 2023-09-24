@@ -22,7 +22,7 @@ const CourseCard = () => {
           WordPress Wizardry
         </p>
         {/* Subtitle */}
-        <h4 className="text-[22px] text-black font-semibold">
+        <h4 className="font-semibold text-black text-title">
           Crafting Dynamic Websites
         </h4>
         {/* Description */}
@@ -33,14 +33,10 @@ const CourseCard = () => {
 
         {/* Footer - Date & Button */}
         <div className="mt-8 mb-2">
-          <p className="text-[22px] text-neutral-700 font-semibold mb-1.5">
+          <p className="text-title text-neutral-700 font-semibold mb-1.5">
             &#2547;4999.99 BDT
           </p>
-          <Button
-            size="sm"
-            className="w-full py-6 font-bold rounded-lg"
-            variant="light"
-          >
+          <Button className="w-full py-6 font-bold rounded-lg" variant="light">
             Course Details
             <ArrowRight className="w-4 h-4 ml-2" />
           </Button>
