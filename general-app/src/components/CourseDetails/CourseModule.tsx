@@ -2,98 +2,55 @@ import Image from "next/image";
 import Accordion from "./Accordion";
 import Instructor from "./Instructor";
 import VideoThumbnail from "./VideoThumbnail";
+import { sampleCourse } from "@/data/sampleCourse";
 
 const accordionData = [
-    { summery: "Research and strategy", details: "" },
-    { summery: "Information architecture and wireframing", details: "" },
-    { summery: "Visual design and usability", details: "" },
-    { summery: "Interaction design and user testing", details: "" },
-    { summery: "Mobile and responsive design", details: "" },
-    { summery: "Design systems and collaboration", details: "" },
-]
+  { summery: "Research and strategy", details: "" },
+  { summery: "Information architecture and wireframing", details: "" },
+  { summery: "Visual design and usability", details: "" },
+  { summery: "Interaction design and user testing", details: "" },
+  { summery: "Mobile and responsive design", details: "" },
+  { summery: "Design systems and collaboration", details: "" },
+];
 
 export default function CourseModule() {
   return (
-    <section className="max-w mx-auto px-4 flex flex-col mt-16 md:mt-36">
+    <section className="flex flex-col px-4 mx-auto mt-16 max-w md:mt-36">
       <h2
-        className="text-black-v1 font-medium text-3xl md:text-4xl text-center"
+        className="text-3xl font-medium text-center text-black-v1 md:text-4xl"
         data-animate="text"
       >
         Course Module
       </h2>
-      <div className="flex flex-col md:flex-row mt-12 gap-10 items-start">
-        <div className="w-full md:w-3/5 space-y-4">
-          <Accordion summery="Introduction to UX/UI design">
-            <p className="font-medium text-bright-orange -mt-2 mb-3 ml-4">
-              Week 1
-            </p>
-            <div className="mb-6 px-4 leading-relaxed text-black-v1">
-              <div className="flex items-start gap-3">
-                <div className="timeline">
-                  <div className="circle"></div>
-                  <div className="vline"></div>
-                </div>
-                <p className="-mt-[4px] text-sm cut-text">
-                  What is UX/UI design and why is it important?
-                </p>
+      <div className="flex flex-col items-start gap-10 mt-12 md:flex-row">
+        <div className="w-full space-y-4 md:w-3/5">
+          {sampleCourse.map((module, index) => (
+            <Accordion moduleTitle={module.moduleTitle} key={index}>
+              <div className="px-4">
+                <ol className="mt-8 ml-4 border-l-2 border-[#DCE1E8] border-dotted">
+                  {module.modules.map((item, i) => (
+                    <li key={i}>
+                      <div className="flex items-center flex-start">
+                        <div className="-ml-[9px] -mt-2 mr-3 flex h-4 min-w-[16px] rounded-full bg-white border-2 border-neutral-300" />
+                        <h5 className="-mt-2 text-base font-medium text-black">
+                          {item}
+                        </h5>
+                      </div>
+                      <div className="pb-2 mb-6 ml-6">
+                        {/* <div className="flex items-center gap-2 text-sm text-neutral-500">
+                        <span>Assessment</span>
+                        <span className="block w-1 h-1 rounded-full bg-neutral-500" />
+                        <span>43 Minutes</span>
+                      </div> */}
+                      </div>
+                    </li>
+                  ))}
+                </ol>
               </div>
-              <div className="pl-[6px]">
-                <VideoThumbnail/>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="timeline">
-                  <div className="circle"></div>
-                  <div className="vline"></div>
-                </div>
-                <p className="-mt-[4px] text-sm cut-text">
-                  The UI design process
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="timeline">
-                  <div className="circle"></div>
-                  <div className="vline"></div>
-                </div>
-                <p className="-mt-[4px] text-sm cut-text">
-                  The roles and responsibilities of UX/UI designers
-                </p>
-              </div>
-              <div className="flex items-start gap-3">
-                <div className="timeline">
-                  <div className="circle"></div>
-                </div>
-                <p className="-mt-[4px] text-sm cut-text">
-                  How to Submit Assignments (Off topic)
-                </p>
-              </div>
-            </div>
-
-            <p className="font-medium text-bright-orange -mt-1 mb-3 ml-4">
-              Week 2
-            </p>
-            <div className="flex items-center py-2 px-4 border-[2px] w-fit gap-2 ml-4 rounded-md mb-6">
-              <Image
-                width={20}
-                height={20}
-                src="/icons/course-details/assignment.svg"
-                alt="assignment"
-                className="w-5 h-5"
-              />
-              <p className="">Assignment</p>
-            </div>
-          </Accordion>
-
-        {
-            accordionData.map((accordion, i) => (
-                <Accordion delay={(i+1) * 0.3} key={i+"accordion"} summery={accordion.summery}>
-                    <p className="text-black-v1 px-6 pb-6">
-                        {accordion.details || "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur sed perspiciatis consectetur unde accusamus hic illum sunt quis porro qui?"}
-                    </p>
-                </Accordion>
-            ))
-        }
+            </Accordion>
+          ))}
         </div>
-        <Instructor/>
+        <Instructor />
       </div>
     </section>
   );

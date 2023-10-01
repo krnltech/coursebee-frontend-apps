@@ -1,13 +1,11 @@
-import Image from "next/image"
+import Image from "next/image";
 
 function CourseInfo() {
   return (
-    <section
-      className="max-w mx-auto px-4 mt-12 gap-8 flex flex-col md:flex-row justify-center"
-    >
-      <div className="w-full md:w-1/2 grid grid-cols-2 gap-5 sm:gap-10 mt-1">
+    <section className="flex flex-col justify-center gap-8 px-4 mx-auto mt-12 max-w md:flex-row">
+      <div className="grid w-full grid-cols-2 gap-5 mt-1 md:w-1/2 sm:gap-10">
         <div>
-          <p data-animate="text" className="text-dark-gray text-sm font-bold">
+          <p data-animate="text" className="text-sm font-bold text-dark-gray">
             Course Details
           </p>
           <div className="mt-4 space-y-3">
@@ -17,7 +15,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="0.2"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/level.svg"
                 alt="beginner level"
               />
@@ -35,7 +33,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="0.4"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/Delivery Time.png"
                 alt="duration"
               />
@@ -44,7 +42,7 @@ function CourseInfo() {
                 data-animate="text"
                 data-delay="0.5"
               >
-                Duration: <span className="font-semibold">24 weeks</span>
+                Duration: <span className="font-semibold">42 hours</span>
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -53,7 +51,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="0.6"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/Tuition.png"
                 alt=""
               />
@@ -71,7 +69,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="0.8"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/Clipboard.png"
                 alt="projects"
               />
@@ -80,7 +78,7 @@ function CourseInfo() {
                 data-delay="0.9"
                 className="text-sm sm:text-base"
               >
-                Projects: <span className="font-semibold">12</span>
+                Assignments: <span className="font-semibold">12</span>
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -89,7 +87,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="1"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/CashCoin.svg"
                 alt="fee"
               />
@@ -99,14 +97,16 @@ function CourseInfo() {
                 data-delay="1.1"
               >
                 Fee:
-                <span className="font-medium text-bright-orange">4999.99 BDT</span>
+                <span className="ml-1 font-medium text-bright-orange">
+                  4999.99 BDT
+                </span>
               </p>
             </div>
           </div>
         </div>
         <div>
           <p
-            className="text-dark-gray text-sm font-bold"
+            className="text-sm font-bold text-dark-gray"
             data-animate="text"
             data-delay="1.2"
           >
@@ -119,7 +119,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="1.3"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/People.svg"
                 alt="total"
               />
@@ -128,7 +128,8 @@ function CourseInfo() {
                 data-animate="text"
                 data-delay="1.4"
               >
-                Total: <span className="font-medium text-bright-orange">200</span>
+                Total:{" "}
+                <span className="ml-1 font-medium text-bright-orange">200</span>
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -137,7 +138,7 @@ function CourseInfo() {
                 height={20}
                 data-animate="text"
                 data-delay="1.5"
-                className="w-4 sm:w-5 h-4 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5"
                 src="/icons/course-details/PersonPlus.svg"
                 alt="Remaining"
               />
@@ -147,7 +148,7 @@ function CourseInfo() {
                 data-delay="1.6"
               >
                 Remaining:
-                <span className="font-medium text-bright-orange">121</span>
+                <span className="ml-1 font-medium text-bright-orange">121</span>
               </p>
             </div>
             <div className="flex items-center gap-4">
@@ -166,7 +167,9 @@ function CourseInfo() {
                 data-delay="1.8"
               >
                 Time Remaining:
-                <span className="font-medium text-bright-orange"> 23:04:15</span>
+                <span className="ml-1 font-medium text-bright-orange">
+                  23:04:15
+                </span>
               </p>
             </div>
           </div>
@@ -175,24 +178,25 @@ function CourseInfo() {
 
       <div className="w-full md:w-1/2">
         <span
-          className="text-sm text-dark-gray font-bold"
+          className="text-sm font-bold text-dark-gray"
           data-animate="text"
           data-delay="2"
-          >Course Summary</span>
+        >
+          Course Summary
+        </span>
         <p
-          className="text-black-v1 mt-2 text-base"
+          className="mt-2 text-base text-black-v1"
           data-animate="text"
           data-delay="2.2"
         >
-          Students who complete this course should have a solid foundation in
-          UX/UI design and be able to apply their knowledge and abilities to
-          construct efficient and user-friendly websites and mobile
-          applications.
+          We will try learn how sales and marketing works in a online business
+          from start to finish. So every video is equally important in this
+          course to understand how business works. We want to be by your side
+          from the beginning to the end of your online business journey.
         </p>
       </div>
     </section>
-
-  )
+  );
 }
 
-export default CourseInfo
+export default CourseInfo;

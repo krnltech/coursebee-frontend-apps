@@ -3,94 +3,94 @@ import Image from "next/image";
 
 function BannerSection() {
   return (
-    <section className="max-w mt-32 md:mt-40 my-20 px-4">
+    <section className="px-4 my-20 mt-32 max-w md:mt-40">
       <div className="overflow-hidden relative bg-course-details-banner bg-cover bg-center bg-no-repeat h-auto md:h-[500px] rounded-lg">
         <GradiantImageBackground />
-        <div className="flex items-center justify-center h-full flex-col gap-6 md:gap-12">
+        <div className="flex flex-col items-center justify-center h-full gap-6 md:gap-12">
           <h1
             data-animate="text"
-            className="text-3xl md:text-5xl font-bold text-white [word-spacing:2px] text-center py-8 px-4 md:py-0 md:px-0"
+            className="text-3xl max-w-4xl md:text-[45px] font-semibold text-white [word-spacing:2px] text-center py-8 px-4 md:py-0 md:px-0 leading-snug"
           >
-            Entering into the field of UX/UI
+            Complete Digital Entrepreneurship Business Guideline
           </h1>
-          <div className="flex md:flex-row flex-col items-center gap-8 md:gap-20">
-            <div className="flex items-center flex-col gap-2">
+          <div className="flex flex-col items-center gap-8 md:flex-row md:gap-20">
+            <div className="flex flex-col items-center gap-2">
               <p
                 data-animate="text"
                 data-delay="0.3"
-                className="text-black-v1 text-sm font-medium"
+                className="text-sm font-medium text-white"
               >
                 Starts From
               </p>
               <p
                 data-animate="text"
                 data-delay="0.4"
-                className="text-2xl md:text-3xl font-semibold text-white"
+                className="text-2xl font-semibold text-white md:text-3xl"
               >
-                24 June
+                1 January
               </p>
             </div>
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <p
                 data-animate="text"
                 data-delay="0.5"
-                className="text-black-v1 text-sm font-medium"
+                className="text-sm font-medium text-white"
               >
                 Course Duration
               </p>
               <p
                 data-animate="text"
                 data-delay="0.6"
-                className="text-2xl md:text-3xl font-semibold text-white"
+                className="text-2xl font-semibold text-white md:text-3xl"
               >
-                24 Weeks
+                42 Hours
               </p>
             </div>
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <p
                 data-animate="text"
                 data-delay="0.7"
-                className="text-black-v1 text-sm font-medium"
+                className="text-sm font-medium text-white"
               >
                 Course Fee
               </p>
               <p
                 data-animate="text"
                 data-delay="0.8"
-                className="text-2xl md:text-3xl font-semibold text-white"
+                className="text-2xl font-semibold text-white md:text-3xl"
               >
                 4999.99 <span className="text-sm">BDT</span>
               </p>
             </div>
-            <div className="flex items-center flex-col gap-2">
+            <div className="flex flex-col items-center gap-2">
               <p
                 data-animate="text"
                 data-delay="0.9"
-                className="text-black-v1 text-sm font-medium"
+                className="text-sm font-medium text-white"
               >
                 Student Count
               </p>
               <p
                 data-animate="text"
                 data-delay="1"
-                className="text-2xl md:text-3xl font-semibold text-white"
+                className="text-2xl font-semibold text-white md:text-3xl"
               >
                 79
               </p>
             </div>
           </div>
-          <div className="flex md:flex-row flex-col w-full md:w-auto p-4 md:p-0 gap-4 mt-4 md:mt-14">
+          <div className="flex flex-col w-full gap-4 p-4 md:flex-row md:w-auto md:p-0">
             <button
               data-animate="button"
               data-delay="1.3"
-              className="py-4 px-10 bg-white text-bright-orange rounded-lg font-semibold"
+              className="px-8 py-3 font-semibold bg-white rounded-lg text-bright-orange"
             >
               Enroll now
             </button>
             <button
               data-animate="button"
               data-delay="1.6"
-              className="py-4 px-10 bg-[#1F293D] text-white border-[#1F293D] rounded-lg font-semibold"
+              className="py-3 px-8 bg-[#1F293D] text-white border-[#1F293D] rounded-lg font-semibold"
             >
               Enroll for next batch
             </button>

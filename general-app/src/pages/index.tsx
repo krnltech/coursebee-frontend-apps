@@ -13,10 +13,15 @@ import StudentsFeedback from "@/components/Home/StudentsFeedback";
 import { GetStaticProps } from "next";
 import { i18n } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Head from "next/head";
 
 export default function Home() {
   return (
     <>
+      <Head>
+        <title>CourseBee</title>
+      </Head>
+
       <HeroSection />
       <BannerSection />
       <FeaturedSection />

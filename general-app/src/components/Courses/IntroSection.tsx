@@ -1,17 +1,20 @@
-import { useTranslation } from "next-i18next"
+import { useTranslation } from "next-i18next";
 
 export default function IntroSection() {
-  const { t } = useTranslation('courses');
+  const { t } = useTranslation("courses");
 
   return (
-    <section className="text-center max-w mx-auto mt-56 px-3">
-      <h1 className="text-4xl md:text-6xl font-medium pb-4" data-animate="text">
-        {t('intro.heading')}
+    <section className="px-3 mx-auto text-center mt-36 md:mt-56 max-w">
+      <h1 className="pb-4 text-4xl font-medium md:text-6xl" data-animate="text">
+        {t("intro.heading")}
       </h1>
       <p
-        className="text-lg text-dark-gray max-w-4xl mx-auto" data-animate="text" data-delay="0.5">
-          {t('intro.desc')}
+        className="max-w-3xl mx-auto text-base lg:text-xl text-ncolor-500"
+        data-animate="text"
+        data-delay="0.5"
+      >
+        {t("intro.desc")}
       </p>
     </section>
-  )
+  );
 }

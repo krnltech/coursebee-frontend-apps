@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
-import RatingsAndStars from "./RatingsAndStars";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import HeroImageSlider from "../Slider/HeroImageSlider";
+import RatingsAndStars from "../RatingsAndStars";
 
 function HeroSection() {
   const { t } = useTranslation("home");
